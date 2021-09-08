@@ -1,5 +1,10 @@
 import React, {Component} from "react";
 
+const formatter = new Intl.NumberFormat('en-US', {
+    style: 'currency',
+    currency: 'USD',
+  });
+
 export default class Form extends Component {
 
     constructor() {
@@ -60,7 +65,7 @@ export default class Form extends Component {
                 placeholder="Term in years"/>
                 </p>
                 </form>
-            Monthly Payment = {monthlyPayment}
+            Monthly Payment = {formatter.format(monthlyPayment)}
             </div>
         )
     }
